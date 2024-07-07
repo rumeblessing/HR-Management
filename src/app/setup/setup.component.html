@@ -1,0 +1,13 @@
+
+<!-- Template Without a Header and sidebar -->
+
+
+<div class="wrapper">
+  <app-sidebar class="sidebar"></app-sidebar>
+  <div class="main" [class.expanded]="isExpanded">
+    <app-header></app-header>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+/* General body styles */
+.body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card header styles */
+.card-header {
+    background-color: #fff;
+    border: none;
+}
+
+/* Card title styles */
+.card-header h3 {
+    color: #333;
+    margin: 0;
+}
+
+/* Button styles */
+.btn-set-task {
+    font-size: 14px;
+}
+
+/* Table styles */
+.table {
+    width: 100%;
+    background-color: #fff;
+}
+
+.table th,
+.table td {
+    border-top: none;
+}
+
+/* Avatar styles */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Pagination styles */
+.pagination {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination .page-link {
+    color: #333;
+    border-color: #ccc;
+}
+
+.pagination .page-link:hover {
+    background-color: #f1f1f1;
+}
+
+/* Modal dialog styles (if applicable) */
+.modal-dialog {
+    max-width: 800px;
+}
+
+
+.ctm-border-radius {
+    border-radius: 10px;
+}
+
+.shadow-sm {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grow {
+    transition: transform 0.2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.02);
+}
+
+.custom-table th,
+.custom-table td {
+    border: none; 
+}
+
+

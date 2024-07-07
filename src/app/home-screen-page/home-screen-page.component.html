@@ -1,0 +1,110 @@
+
+      <!-- mainbody -->
+      <section style="background-color: #edeff3">
+        <div class="row" style="gap: 30px; padding: 12px">
+          <div class="rowitem" style="margin-left: 60px" (click)="gotoEmployeePage()" >
+            <i
+              class="bi bi-people-fill"
+              style="font-size: 40px; color: #6d44b8"
+            ></i>
+            <h4 class="">User</h4>
+            <span class="">{{ employeeCount }}</span>
+          </div>
+          <div class="rowitem" style="margin-left: 60px" (click)="navigateToHoliday()">
+            <i
+              class="bi bi-hand-thumbs-up"
+              style="font-size: 40px; color: #f58634"
+            ></i>
+            <h4 class="">Holiday</h4>
+          </div> 
+          <div class="rowitem" style="margin-left: 60px" (click)="navigateToEvent()" >
+            <i
+              class="bi bi-calendar-event"
+              style="font-size: 40px; color: #6d44b8"
+            ></i>
+            <h4 class="">Event</h4>
+            <span class="">{{eventCount}}</span>
+          </div>
+          <div class="rowitem" style="margin-left: 60px">
+            <i
+              class="bi bi-pie-chart"
+              style="font-size: 40px; color: #6d44b8"
+            ></i>
+            <h4 class="">Report</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="rowitem2" style="margin-left: 60px">
+            <div class="card  p-3">
+              <div class="card-body text-center">
+                <h5 class="mb-4">Total Number of Staff</h5>
+                <div>
+                  <canvas #myDoughnutChart width="300" height="300"></canvas>
+                </div>
+                <!-- <div class="pieContainer">
+                  <div class="pieBackground"></div>
+                  <div id="pieSlice1" class="hold"><div class="pie"></div></div>
+                  <div id="pieSlice2" class="hold"><div class="pie"></div></div>
+                  <div class="innerCircle"></div>
+                </div> -->
+                <!-- <div class="legend">
+                  <div class="legend-item">
+                    <div class="legend-color green"></div>
+                    <span>Male</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-color yellow"></div>
+                    <span>Female</span>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="rowitem2" style="margin-right: 0px !important">
+            <div class="card" style="width: 18rem">
+              <div class="card-header">Today</div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <i style="color: palevioletred" class="bi bi-cake2"></i> No
+                  Birthday Today
+                </li>
+                <li class="list-group-item">
+                  <i style="color: #f58634" class="bi bi-person-arms-up"></i>
+                  Blessing is on leave Today
+                </li>
+                <li class="list-group-item">
+                  <i style="color: #f58634" class="bi bi-person-arms-up"></i>
+                  Fatima is on leave Today
+                </li>
+                <li class="list-group-item">
+                  <i style="color: #f58634" class="bi bi-person-arms-up"></i>
+                  Joshua Ojo Joined Today Today
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rowitem2" style="margin-right: 0px !important">
+            <div class="card" style="width: 18rem;">
+              <div class="card-header">
+                <span style="font-size: 20px;">Team Leads</span>
+                <a (click)="navigateToDepartment()" style="font-size: 15px; margin-right: 10px;" class="text-primary">Manage Team</a>
+              </div>
+              <ul class="list-group list-group-flush" *ngFor="let department of departments">
+                
+                  <li class="list-group-item team-lead">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" alt="Profile Picture">
+                    <div class="team-lead-info">
+                      <span>{{ department.departmentHead }}</span>
+                      <span class="role">{{ department.departmentName }}</span>
+                    </div>
+                  </li>
+             
+              </ul>
+            </div>
+          </div>
+        </div>
+       
+      </section>
+    
+

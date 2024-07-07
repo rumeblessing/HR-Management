@@ -1,0 +1,315 @@
+<div class="body d-flex py-lg-3 py-md-2">
+  <div class="container-xxl" *ngIf="openmodal == false">
+    <div class="row align-items-center">
+      <div class="border-0 mb-4">
+        <div
+          class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap"
+        >
+        <div class="col-auto d-flex w-sm-100">
+            <button
+              type="button"
+              class="btn btn-set-task w-sm-100"
+              style="background-color: #f58634"
+              (click)="toggleModal('CreateDepartmentModal', 'open')"
+            >
+              <i class="bi bi-plus-circle me-2 fs-6"></i>Add Departments
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Row end -->
+    <div class="row clearfix g-3">
+      <div class="col-sm-12">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div
+              id="myProjectTable_wrapper"
+              class="dataTables_wrapper dt-bootstrap5 no-footer"
+            >
+              <div class="row">
+                <div class="col-sm-12 col-md-6">
+                  <div class="dataTables_length" id="myProjectTable_length">
+                    <label
+                      >Show
+                      <select
+                        name="myProjectTable_length"
+                        aria-controls="myProjectTable"
+                        class="form-select form-select-sm"
+                      >
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                      entries
+                    </label>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div id="myProjectTable_filter" class="dataTables_filter">
+                    <label
+                      >Search:
+                      <input
+                        type="search"
+                        class="form-control form-control-sm"
+                        placeholder=""
+                        aria-controls="myProjectTable"
+                      />
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <table
+                    id="myProjectTable"
+                    class="table table-hover align-middle mb-0 nowrap dataTable no-footer dtr-inline"
+                    style="width: 100%"
+                    role="grid"
+                    aria-describedby="myProjectTable_info"
+                  >
+                    <thead>
+                      <tr role="row">
+                        <th
+                          class="sorting_asc"
+                          tabindex="0"
+                          aria-controls="myProjectTable"
+                          rowspan="1"
+                          colspan="1"
+                          style="width: 28.2px"
+                          aria-sort="ascending"
+                          aria-label="#: activate to sort column descending"
+                        >
+                          #
+                        </th>
+                        <th
+                          class="sorting"
+                          tabindex="0"
+                          aria-controls="myProjectTable"
+                          rowspan="1"
+                          colspan="1"
+                          style="width: 207.2px"
+                          aria-label="Department Head: activate to sort column ascending"
+                        >
+                          Department Head
+                        </th>
+                        <th
+                          class="dt-body-right sorting"
+                          tabindex="0"
+                          aria-controls="myProjectTable"
+                          rowspan="1"
+                          colspan="1"
+                          style="width: 186.2px"
+                          aria-label="Department Name: activate to sort column ascending"
+                        >
+                          Department Name
+                        </th>
+                        <th
+                          class="sorting"
+                          tabindex="0"
+                          aria-controls="myProjectTable"
+                          rowspan="1"
+                          colspan="1"
+                          style="width: 221.2px"
+                          aria-label="Employee UnderWork: activate to sort column ascending"
+                        >
+                          Department ID
+                        </th>
+                        <th
+                          class="dt-body-right sorting"
+                          tabindex="0"
+                          aria-controls="myProjectTable"
+                          rowspan="1"
+                          colspan="1"
+                          style="width: 104.2px"
+                          aria-label="Actions: activate to sort column ascending"
+                        >
+                          Actions
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr role="row" class="odd" *ngFor="let i of department; let indx = index">
+                        <td tabindex="0" class="sorting_1">
+                          <span class="fw-bold">{{indx+1}}</span>
+                        </td>
+                        <td>
+                          <img
+                            src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                            class="rounded-circle bii"
+                            height="30"
+                            alt=""
+                            loading="lazy"
+                          />
+                          <span class="fw-bold ms-1">{{ i.departmentHead }}</span>
+                        </td>
+                        <td class="dt-body-right">{{ i.departmentName }}</td>
+                        <td>{{ i.departmentID }}</td>
+                        <td class="dt-body-right">
+                          <div
+                            class="btn-group"
+                            role="group"
+                            aria-label="Basic outlined example"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                              (click)="
+                                toggleModal('CreateEmployeeModal', 'open')
+                              "
+                            >
+                              <i
+                                style="font-size: 20px"
+                                class="bi bi-pencil-square text-success"
+                              ></i>
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary deleterow"
+                            >
+                              <i
+                                style="font-size: 20px"
+                                class="bi bi-trash3 text-danger"
+                              ></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-5">
+                  <div
+                    class="dataTables_info"
+                    id="myProjectTable_info"
+                    role="status"
+                    aria-live="polite"
+                  >
+                    Showing 1 to 6 of 6 entries
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-7">
+                  <div
+                    class="dataTables_paginate paging_simple_numbers"
+                    id="myProjectTable_paginate"
+                  >
+                    <ul class="pagination">
+                      <li
+                        class="paginate_button page-item previous disabled"
+                        id="myProjectTable_previous"
+                      >
+                        <a
+                          href="#"
+                          aria-controls="myProjectTable"
+                          data-dt-idx="0"
+                          tabindex="0"
+                          class="page-link"
+                          >Previous</a
+                        >
+                      </li>
+                      <li class="paginate_button page-item active">
+                        <a
+                          href="#"
+                          aria-controls="myProjectTable"
+                          data-dt-idx="1"
+                          tabindex="0"
+                          class="page-link"
+                          >1</a
+                        >
+                      </li>
+                      <li
+                        class="paginate_button page-item next disabled"
+                        id="myProjectTable_next"
+                      >
+                        <a
+                          href="#"
+                          aria-controls="myProjectTable"
+                          data-dt-idx="2"
+                          tabindex="0"
+                          class="page-link"
+                          >Next</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Row End -->
+  
+          <button (click)="navigateToHome()" class="back-button">Back to Home</button>
+
+  
+  </div>
+
+  <div id="CreateDepartmentModal" class="modal">
+    <div class="modal-center-content mx-auto pt-4 px-2 px-lg-4 pb-5">
+      <div class="d-flex justify-content-between">
+        <p class="modal-heading text-center">Create Department</p>
+        <img
+          style="cursor: pointer"
+          class=""
+          (click)="toggleModal('CreateDepartmentModal', 'close')"
+          src="/assets/Images/dismiss.svg"
+          alt=""
+        />
+      </div>
+      <section>
+        <form [formGroup]="Departmentform">
+          <div class="form-group">
+            <label for="department-name">Department Name</label>
+            <input
+              type="text"
+              id="departmentName"
+              formControlName="DepartmentName"
+            />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="department-head">Department Head</label>
+              <input
+                type="text"
+                id="departmentHead"
+                formControlName="DepartmentHead"
+              />
+            </div>
+            <div class="form-group">
+              <label for="employee-underwork">Department ID</label>
+              <input
+                type="text"
+                id="DepartmentID"
+                formControlName="DepartmentID"
+              />
+            </div>
+          </div>
+
+          <div class="form-buttons mt-2">
+            <button      (click)="toggleModal('CreateDepartmentModal', 'close')"
+            type="button" class="btn btn-done">
+              Close
+            </button>
+            <button
+              (click)="AddDesignation(Departmentform)"
+              type="submit"
+              class="btn btn-add"
+            >
+              Add
+            </button>
+          </div>
+        </form>
+      </section>
+
+  
+    </div>
+  </div>
+ 
+ 
+</div>

@@ -25,6 +25,10 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+"node_modules/bootstrap-icons/font/bootstrap-icons.css",
+"node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+
               "src/styles.css"
             ],
             "scripts": []
@@ -88,11 +92,16 @@
             ],
             "styles": [
               "src/styles.css"
+              
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b80100e1-8a6a-4277-81d7-5baef2032f7e"
   }
+
 }

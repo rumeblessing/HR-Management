@@ -1,0 +1,183 @@
+<div class="main">
+  <div *ngIf="ShowHeader == true">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div>
+          <h1 class="ms-5">Welcome {{ FirstName }}!</h1>
+        </div>
+        <div style="margin-right: 100px">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Language
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Yoruba</a>
+                <a class="dropdown-item" href="#">Igbo</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Hausa</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Report
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Ms Word</a>
+                <a class="dropdown-item" href="#">Ms Excel</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">PDf</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Project
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">New BlogPost</a>
+                <a class="dropdown-item" href="#">Interview</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#"
+                ><i class="bi bii bi-bell-fill"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#"
+                ><i class="bi bii bi-envelope-at-fill"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img
+                  src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                  class="rounded-circle bii"
+                  height="30"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!-- Header2 -->
+ 
+<div *ngIf="ShowHeader == false">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div>
+        <h1 class="ms-5">{{ url | uppercase }}</h1>
+      </div>
+      <div style="margin-right: 100px">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Language
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Yoruba</a>
+              <a class="dropdown-item" href="#">Igbo</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Hausa</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Report
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Ms Word</a>
+              <a class="dropdown-item" href="#">Ms Excel</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">PDf</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Project
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">New BlogPost</a>
+              <a class="dropdown-item" href="#">Interview</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#"
+              ><i class="bi bii bi-bell-fill"></i
+            ></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#"
+              ><i class="bi bii bi-envelope-at-fill"></i
+            ></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img
+                src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                class="rounded-circle bii"
+                height="30"
+                alt=""
+                loading="lazy"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

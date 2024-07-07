@@ -1,0 +1,137 @@
+.body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card header styles */
+.card-header {
+    background-color: #fff;
+    border: none;
+}
+
+/* Card title styles */
+.card-header h3 {
+    color: #333;
+    margin: 0;
+}
+
+/* Button styles */
+.btn-set-task {
+    font-size: 14px;
+}
+
+/* Table styles */
+.table {
+    width: 100%;
+    background-color: #fff;
+}
+
+.table th,
+.table td {
+    border-top: none;
+}
+
+/* Avatar styles */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Pagination styles */
+/* .pagination {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination .page-link {
+    color: #333;
+    border-color: #ccc;
+}
+
+.pagination .page-link:hover {
+    background-color: #f1f1f1;
+} */
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+    color: #343a40;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+.form-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+.form-buttons {
+    text-align: center;
+}
+.back-button {
+    background-color: #6d44b8;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .back-button:hover {
+    background-color: #f58634;
+  }
+
+.btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-done {
+    background-color: #f58634;
+    color: white;
+}
+
+.btn-add {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+
+  

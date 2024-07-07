@@ -1,0 +1,86 @@
+<div class="body d-flex py-lg-3 py-md-2">
+  <div class="container-xxl">
+      <div class="row align-items-center">
+          <div class="border-0 mb-4">
+              <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+        <button (click)="navigateToHome()" class="back-button">Back to Home</button>
+                  <!-- <div class="col-auto d-flex w-sm-100">
+                      <button type="button" class="btn btn-set-task w-sm-100" style="background-color: #f58634; color: white; font-size: 15px;" data-bs-toggle="modal" data-bs-target="#addholiday"><i class="bi bi-plus-circle me-2 fs-6"></i>Add Holidays</button>
+                  </div> -->
+              </div>
+          </div>
+      </div> <!-- Row end  -->
+      <div class="row clearfix g-3">
+          <div class="col-sm-12">
+              <div class="card mb-3">
+                  <div class="card-body">
+                      <div id="myProjectTable_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                          <div class="row">
+                              <div class="col-sm-12 col-md-6">
+                                  <div class="dataTables_length" id="myProjectTable_length">
+                                      <label>Show 
+                                          <select name="myProjectTable_length" aria-controls="myProjectTable" class="form-select form-select-sm">
+                                              <option value="10">10</option>
+                                              <option value="25">25</option>
+                                              <option value="50">50</option>
+                                              <option value="100">100</option>
+                                          </select> entries
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="col-sm-12 col-md-6">
+                                  <div id="myProjectTable_filter" class="dataTables_filter">
+                                      <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="myProjectTable"></label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <table id="myProjectTable" class="table table-hover align-middle mb-0 nowrap dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="myProjectTable_info">
+                                      <thead>
+                                          <tr role="row">
+                                              <th class="sorting_asc" tabindex="0" aria-controls="myProjectTable" rowspan="1" colspan="1" style="width: 42.2px;" aria-sort="ascending" aria-label="#: activate to sort column descending">#</th>
+                                              <th class="sorting" tabindex="0" aria-controls="myProjectTable" rowspan="1" colspan="1" style="width: 165.2px;" aria-label="Holiday Day: activate to sort column ascending">Holiday Day</th>
+                                              <th class="dt-body-right sorting" tabindex="0" aria-controls="myProjectTable" rowspan="1" colspan="1" style="width: 205.2px;" aria-label="Holiday Date: activate to sort column ascending">Holiday Date</th>
+                                              <th class="sorting" tabindex="0" aria-controls="myProjectTable" rowspan="1" colspan="1" style="width: 203.2px;" aria-label="Holiday Name: activate to sort column ascending">Holiday Name</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr role="row" class="odd" *ngFor="let item of holidays; let i = index">
+                                              <td class="text-danger sorting_1" tabindex="0">{{i + 1}}</td>
+                                              <td class="text-danger">{{formatDateDay(item.date.iso)}}</td>
+                                              <td class="text-danger dt-body-right">{{formatDate(item.date.iso)}}</td>
+                                              <td class="text-danger">{{item.name}}</td>
+                                              
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-12 col-md-5">
+                                  <div class="dataTables_info" id="myProjectTable_info" role="status" aria-live="polite">Showing 1 to 9 of 9 entries</div>
+                              </div>
+                              <div class="col-sm-12 col-md-7">
+                                  <div class="dataTables_paginate paging_simple_numbers" id="myProjectTable_paginate">
+                                      <ul class="pagination">
+                                          <li class="paginate_button page-item previous disabled" id="myProjectTable_previous">
+                                              <a href="#" aria-controls="myProjectTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                          </li>
+                                          <li class="paginate_button page-item active">
+                                              <a href="#" aria-controls="myProjectTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                                          </li>
+                                          <li class="paginate_button page-item next disabled" id="myProjectTable_next">
+                                              <a href="#" aria-controls="myProjectTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

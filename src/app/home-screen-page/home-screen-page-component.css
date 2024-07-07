@@ -1,0 +1,154 @@
+
+  .input-group{
+    margin-left: 20px;
+    padding: 10px;
+  }
+  .bii{
+    font-size: 24px;
+    color: #6d44b8;
+  }
+  li{
+    font-size: 20px;  
+  }
+  .rowitem{
+   flex: 2;
+   height: 120px;
+   background-color: white;
+   border-radius: 10px;
+   border: 1px solid #eee;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+  }
+  .rowitem2{
+    flex: 2;
+    /* height: 120px; */
+    /* background-color: white; */
+    border-radius: 10px;
+    /* border: 1px solid #eee; */
+    display: flex;
+    padding: 0px !important;
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+   }
+   /* piechart */
+   .pieContainer {
+    height: 250px;
+    width: 250px;
+    position: relative;
+    margin: auto;
+}
+
+.pieBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.5);
+}
+
+.pie {
+    transition: all 1s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    clip: rect(0px, 125px, 250px, 0px);
+}
+
+.hold {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    clip: rect(0px, 250px, 250px, 125px);
+}
+
+#pieSlice1 {
+    transform: rotate(30deg);
+}
+
+#pieSlice1 .pie {
+    background-color: #6d44b8;
+    transform: rotate(184deg); /* Green section (58.3%) */
+}
+
+#pieSlice2 {
+    transform: rotate(210deg);
+}
+
+#pieSlice2 .pie {
+    background-color: #f58634;
+    transform: rotate(181deg); 
+}
+
+
+.innerCircle {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background-color: white;
+    border-radius: 50%;
+    top: 45px;
+    left: 45px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.5) inset;
+}
+
+
+.card-header{
+    font-size: 24px;
+    background-color: white !important;
+    color: black;
+    padding-bottom: 12px;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list-group-item{
+    font-size: 20px;
+    background-color: white !important;
+    color: black;
+    padding-bottom: 12px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.team-lead {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  .team-lead img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  .team-lead-info {
+    margin-left: 10px;
+  }
+  .team-lead-info span {
+    display: block;
+    font-size: 15px !important;
+  }
+  .team-lead-info .role {
+    color: gray;
+  }
+
+
+
+  @media (min-width: 768px) { 
+    .ml-auto {
+      margin-right: auto !important; 
+    }
+  }
+/*  */
+
+
+
+
+
+
+

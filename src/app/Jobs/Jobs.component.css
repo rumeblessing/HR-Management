@@ -1,0 +1,50 @@
+/* General body styles */
+.body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+
+/* Button styles */
+.btn-set-task {
+    font-size: 14px;
+    background-color: palevioletred;
+}
+
+/* Table styles */
+.table {
+    width: 100%;
+    background-color: #fff;
+}
+
+.table th,
+.table td {
+    border-top: none;
+}
+
+
+
+/* .ctm-border-radius {
+    border-radius: 10px;
+}
+
+.shadow-sm {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grow {
+    transition: transform 0.2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.02);
+} */
+
+.custom-table th,
+.custom-table td {
+    border: none; 
+}
+
+

@@ -1,0 +1,96 @@
+<div class="body d-flex py-lg-3 py-md-2">
+  <div class="container-xxl">
+    <div class="row mb-4">
+      <div class="col-md-12">
+        <div class="card ctm-border-radius shadow-sm grow">
+          <div class="card-header">
+            <h4 class="card-title mb-0">Apply Leaves</h4>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="applyLeaveForm" novalidate (ngSubmit)="applyForLeave()">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Employee ID <span class="text-danger">*</span></label>
+                    <input formControlName="EmployeeID" class="form-control select">
+                    <div *ngIf="applyLeaveForm.get('EmployeeID')?.invalid && (applyLeaveForm.get('EmployeeID')?.touched || applyLeaveForm.get('EmployeeID')?.dirty)">
+                      <small class="text-danger">Employee ID is required.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 leave-col">
+                  <div class="form-group">
+                    <label>Remaining Leaves</label>
+                    <input type="text" placeholder="10" disabled class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>From</label>
+                    <input type="date" formControlName="DateFrom" class="form-control datetimepicker">
+                    <div *ngIf="applyLeaveForm.get('DateFrom')?.invalid && (applyLeaveForm.get('DateFrom')?.touched || applyLeaveForm.get('DateFrom')?.dirty)">
+                      <small class="text-danger">From date is required.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 leave-col">
+                  <div class="form-group">
+                    <label>To</label>
+                    <input type="date" formControlName="DateTo" class="form-control datetimepicker">
+                    <!-- <div *ngIf="applyLeaveForm.get('DateTo')?.invalid && (applyLeaveForm.get('DateTo')?.touched || applyLeaveForm.get('DateTo')?.dirty)">
+                      <small class="text-danger">To date is required.</small>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              <!-- <div *ngIf="applyLeaveForm.errors?.['dateRangeInvalid']" class="text-danger text-center">
+                Application date cannot be less than resumption date.
+              </div> -->
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Leave Type <span class="text-danger">*</span></label>
+                    <select formControlName="LeaveType" class="form-control select">
+                      <option>Select Leave</option>
+                      <option>Working From Home</option>
+                      <option>Sick Leave</option>
+                      <option>Parental Leave</option>
+                      <option>Annual Leave</option>
+                      <option>Normal Leave</option>
+                    </select>
+                    <div *ngIf="applyLeaveForm.get('LeaveType')?.invalid && (applyLeaveForm.get('LeaveType')?.touched || applyLeaveForm.get('LeaveType')?.dirty)">
+                      <small class="text-danger">Leave type is required.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 leave-col">
+                  <div class="form-group">
+                    <label>Number of Days Leave</label>
+                    <input type="text" formControlName="NumberOfDaysLeave" readonly class="form-control" >
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group mb-0">
+                    <label>Reason</label>
+                    <textarea rows="4" formControlName="LeaveReason" class="form-control"></textarea>
+                    <div *ngIf="applyLeaveForm.get('LeaveReason')?.invalid && (applyLeaveForm.get('LeaveReason')?.touched || applyLeaveForm.get('LeaveReason')?.dirty)">
+                      <small class="text-danger">Reason is required.</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-theme button-1 text-white ctm-border-radius mt-4 mr-2">Apply</button>
+                <a href="javascript:void(0);" class="btn btn-danger text-white ctm-border-radius mt-4">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

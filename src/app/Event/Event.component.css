@@ -1,0 +1,75 @@
+
+.body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card header styles */
+.card-header {
+    background-color: #fff;
+    border: none;
+}
+
+/* Card title styles */
+.card-header h3 {
+    color: #333;
+    margin: 0;
+}
+
+/* Button styles */
+.btn-set-task {
+    font-size: 14px;
+}
+
+/* Table styles */
+.table {
+    width: 100%;
+    background-color: #fff;
+}
+
+.table th,
+.table td {
+    border-top: none;
+}
+
+/* Avatar styles */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Pagination styles */
+.pagination {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination .page-link {
+    color: #333;
+    border-color: #ccc;
+}
+
+.pagination .page-link:hover {
+    background-color: #f1f1f1;
+}
+
+
+.modal-dialog {
+    max-width: 800px;
+}
+.back-button {
+    background-color: #6d44b8;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .back-button:hover {
+    background-color: #f58634;
+  }

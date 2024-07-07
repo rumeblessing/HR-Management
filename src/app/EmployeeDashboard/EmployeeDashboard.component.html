@@ -1,0 +1,354 @@
+<div class="container-fluid">
+  <div class="header-action">
+    <button
+      type="button"
+      class="btn mb-3 mt-3"
+      style="background-color: #6d44b8"
+      (click)="toggleModal('CreateEmployeeModal', 'open')"
+    >
+      <i class="fa fa-plus mr-2"></i>Add Employee
+    </button>
+  </div>
+  <div class="row mt-3">
+    <div class="col-lg-3 col-md-6" (click)="navigateToAllEmployees()">
+        <div class="card">
+        <div class="card-body w_sparkline">
+          <div
+            class="details d-flex justify-content-between align-items-center"
+          >
+            <div>
+              <span>Total Employee</span>
+              <h3 class="mb-0 counter">{{ employeeCount }}</h3>
+            </div>
+            <div class="w_chart">
+              <span
+                ><i
+                  class="fa fa-bar-chart mini-bar-chart"
+                  aria-hidden="true"
+                ></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="card">
+        <div class="card-body w_sparkline">
+          <div
+            class="details d-flex justify-content-between align-items-center"
+          >
+            <div>
+              <span>New Employee</span>
+              <h3 class="mb-0 counter">5</h3>
+            </div>
+            <div class="w_chart">
+              <span
+                ><i
+                  style="color: orangered"
+                  class="fa fa-users mini-bar-chart"
+                  aria-hidden="true"
+                ></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6" (click)="filterByGender('male')">
+     <div class="card">
+        <div class="card-body w_sparkline">
+          <div class="details d-flex justify-content-between align-items-center">
+            <div>
+              <span>Male Employee</span>
+              <h3 class="mb-0 counter">{{ maleCount }}</h3>
+            </div>
+            <div class="w_chart">
+              <span>
+                <i style="color: blue" class="fa fa-male mini-bar-chart" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6" (click)="filterByGender('female')">
+     <div class="card">
+        <div class="card-body w_sparkline">
+          <div class="details d-flex justify-content-between align-items-center">
+            <div>
+              <span>Female Employee</span>
+              <h3 class="mb-0 counter">{{ femaleCount }}</h3>
+            </div>
+            <div class="w_chart">
+              <span>
+                <i style="color: palevioletred" class="fa fa-female mini-bar-chart" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="employeeTable">
+  <div class="tab-content">
+    <div class="tab-pane fade active show" id="Employee-list" role="tabpanel">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Employee List</h3>
+          <div class="card-options">
+            <form>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  placeholder="Search something..."
+                  name="s"
+                />
+                <span class="input-group-btn ml-2">
+                  <button class="btn btn-icon btn-sm" type="submit">
+                    <span class="fe fe-search"></span>
+                  </button>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table
+              #employeeTable
+              class="table table-hover table-striped table-vcenter text-nowrap mb-0"
+            >
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Employee ID</th>
+                  <th>Phone</th>
+                  <th>Join Date</th>
+                  <th>Role</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngIf="filteredEmployees && filteredEmployees.length > 0; else defaultEmployees">
+                  <tr *ngFor="let i of filteredEmployees; let indx = index" role="row" class="odd">
+                    <td tabindex="0" class="sorting_1">
+                      <span class="fw-bold">{{indx+1}}</span>
+                    </td>
+                    <td>
+                      <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                           class="rounded-circle bii"
+                           height="30"
+                           alt=""
+                           loading="lazy" />
+                      <span class="fw-bold ms-1">{{ i.fullName }}</span>
+                    </td>
+                    <td class="dt-body-right">{{ i.employeeID }}</td>
+                    <td>0900000000</td>
+                    <td>{{ i.dateOfBirth }}</td>
+                    <td>{{ i.employeeRole }}</td>
+                    <td class="dt-body-right">
+                      <div class="btn-group" role="group" aria-label="Basic outlined example">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#depedit">
+                          <i style="font-size: 20px" class="bi bi-pencil-square text-success"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary deleterow">
+                          <i style="font-size: 20px" class="bi bi-trash3 text-danger"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </ng-container>
+                <ng-template #defaultEmployees>
+                  <tr *ngFor="let i of employee; let indx = index" role="row" class="odd">
+                     <td tabindex="0" class="sorting_1">
+                      <span class="fw-bold">{{indx+1}}</span>
+                    </td>
+                    <td>
+                      <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                           class="rounded-circle bii"
+                           height="30"
+                           alt=""
+                           loading="lazy" />
+                      <span class="fw-bold ms-1">{{ i.fullName }}</span>
+                    </td>
+                    <td class="dt-body-right">{{ i.employeeID }}</td>
+                    <td>0900000000</td>
+                    <td>{{ i.dateOfBirth }}</td>
+                    <td>{{ i.employeeRole }}</td>
+                    <td class="dt-body-right">
+                      <div class="btn-group" role="group" aria-label="Basic outlined example">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#depedit">
+                          <i style="font-size: 20px" class="bi bi-pencil-square text-success"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary deleterow">
+                          <i style="font-size: 20px" class="bi bi-trash3 text-danger"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </ng-template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+          <button (click)="navigateToHome()" class="back-button">Back to Home</button>
+
+</div>
+<!-- modal -->
+<div id="CreateEmployeeModal" class="modal">
+  <div class="modal-center-content mx-auto pt-4 px-2 px-lg-4 pb-5">
+    <div class="d-flex justify-content-between">
+      <h1 class="modal-heading text-center"> Employee Registration Form</h1>
+      <img
+        style="cursor: pointer"
+        class=""
+        (click)="toggleModal('CreateEmployeeModal', 'close')"
+        src="/assets/Images/dismiss.svg"
+        alt=""
+      />
+    </div>
+    <section>
+      <form class="registration-form" [formGroup]="Employeeform" (ngSubmit)="RegisterEmployee()">
+        <h2>Personal Information</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input formControlName="firstName" type="text" id="first-name" name="first-name" />
+            <div *ngIf="Employeeform.get('firstName')?.invalid && Employeeform.get('firstName')?.touched">
+              First Name is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input formControlName="lastName" type="text" id="last-name" name="last-name" />
+            <div *ngIf="Employeeform.get('lastName')?.invalid && Employeeform.get('lastName')?.touched">
+              Last Name is required
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input formControlName="dateOfBirth" type="date" id="dob" name="dob" />
+            <div *ngIf="Employeeform.get('dateOfBirth')?.invalid && Employeeform.get('dateOfBirth')?.touched">
+              Date of Birth is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="nationality">Nationality</label>
+            <input formControlName="nationality" type="text" id="nationality" name="nationality" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <div class="form-row">
+            <div class="checkbox-group">
+              <label><input formControlName="gender" type="radio" name="gender" value="female" /> Female</label>
+            </div>
+            <div class="checkbox-group">
+              <label><input formControlName="gender" type="radio" name="gender" value="male" /> Male</label>
+            </div>
+          </div>
+        </div>
+        <h2>Contact Information</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input formControlName="email" type="email" id="email" name="email" />
+            <div *ngIf="Employeeform.get('email')?.invalid && Employeeform.get('email')?.touched">
+              Email is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input formControlName="phoneNumber" type="tel" id="phone" name="phone" />
+            <div *ngIf="Employeeform.get('phoneNumber')?.invalid && Employeeform.get('phoneNumber')?.touched">
+          </div>
+        </div>
+        <div class="form-group full-width">
+          <label for="street-address">Street Address</label>
+          <input formControlName="streetAddress" type="text" id="street-address" name="street-address" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input formControlName="city" type="text" id="city" name="city" />
+          </div>
+          <div class="form-group">
+            <label for="state">State/Province/Region</label>
+            <input formControlName="state" type="text" id="state" name="state" />
+          </div>
+        </div>
+        <h2>Employment Details</h2>
+        <div class="form-group">
+          <label for="employment-type">Employment Type</label>
+          <div class="form-row">
+            <label class="radio-label"><input formControlName="employmentType" type="radio" name="employment-type" value="full-time" /> Full-time</label>
+            <label class="radio-label"><input formControlName="employmentType" type="radio" name="employment-type" value="part-time" /> Part-time</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="employee-id">Staff ID Number</label>
+            <input formControlName="employeeID" type="text" id="employee-id" name="employee-id" />
+          </div>
+          <div class="form-group">
+            <label for="department">Department</label>
+            <input formControlName="department" type="text" id="department" name="department" />
+          </div>
+          <div class="form-group">
+            <label for="role">Role</label>
+            <input formControlName="employeeRole" type="text" id="role" name="role" />
+          </div>
+        </div>
+        <h2>Next of Kin</h2>
+        <div class="form-group">
+          <label for="nextofkinname">Full Name</label>
+          <input formControlName="nextOfKinName" type="text" id="nextofkinname" name="nextofkinname" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="relationship">Relationship to Employee</label>
+            <input formControlName="relationshipWithEmployee" type="text" id="relationship" name="relationship" />
+          </div>
+          <div class="form-group">
+            <label for="nextofkinnumber">Phone number</label>
+            <input formControlName="nextOfKinPhonenumber" type="text" id="nextofkinnumber" name="nextofkinnumber"/>
+          </div>
+        </div>
+        <h2>Employee Credentials</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <input formControlName="employeeSchoolName" type="text" id="school" name="school" placeholder="School Name" />
+          </div>
+          <div class="form-group">
+            <input formControlName="employeeProgram" type="text" id="program" name="program" placeholder="Program/Major"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <input formControlName="employeeDegree" type="text" id="degree" name="degree" placeholder="Degree Earned" />
+          </div>
+          <div class="form-group">
+            <input formControlName="employeeGraduationYear" type="text" id="yearofgraduation" name="yearofgraduation" placeholder="Graduation Year"/>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-add">
+          Save
+        </button>
+        </div>
+      </form>
+      
+    
+    </section>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="container mt-4">
+  <div class="filter-bar">
+    
+      <div class="search">
+        <h6>Search</h6>
+          <input type="text" placeholder="Search...">
+      </div>
+      <div class="status-filter">
+        <h6>Status</h6>
+          <select>
+              <option value="" disabled selected>None selected</option>
+              <option value="all">Select all</option>
+              <option value="new">New</option>
+              <option value="contacted">Contacted</option>
+              <option value="interviewed">Interviewed</option>
+              <option value="hired">Hired</option>
+          </select>
+      </div>
+      <div class="order-dropdown">
+        <h6>Order</h6>
+          <select>
+              <option value="newest">Newest first</option>
+              <option value="oldest">Oldest first</option>
+          </select>
+      </div>
+      <button class="filter-button">Filter</button>
+  </div>
+  <table class="applicants-table">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Role</th>
+              <th>Employment Type</th>
+              <th>CV</th>
+              <th>Application Date</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Google Inc.</td>
+              <td>exampleoogle.com</td>
+              <td>+123456789</td>
+              <td>Full-stack developer</td>
+            <td>cv document</td>
+              <td>Full-time</td>  
+              <td>04 Jan, 2019</td>
+          </tr>
+          <tr>
+              <td>Facebook Inc.</td>
+              <td>examplefacebook.com</td>
+              <td>+987654321</td>
+              <td>Marketing</td>
+              <td>12 Jan, 2019</td>
+              <td>Full-time</td>
+          </tr>
+          <!-- More rows as needed -->
+      </tbody>
+  </table>
+</div>
