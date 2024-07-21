@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SetupComponent } from './setup.component';
-import { ApplyForLeaveComponent } from '../Apply-For-Leave/Apply-For-Leave.component';
+// import { ApplyForLeaveComponent } from '../Apply-For-Leave/Apply-For-Leave.component';
 import { DepartmentComponent } from '../Department/Department.component';
 import { EmployeeDashboardComponent } from '../EmployeeDashboard/EmployeeDashboard.component';
 import { HolidayComponent } from '../Holiday/Holiday.component';
@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'department', component: DepartmentComponent, pathMatch: 'full'},
   {path: 'holiday', component: HolidayComponent, pathMatch: 'full'},
   {path: 'ViewLeave', component: LeaveRequestComponent, pathMatch: 'full'},
-  {path: 'ApplyLeave', component: ApplyForLeaveComponent, pathMatch: 'full'},
+  // {path: 'ApplyLeave', component: ApplyForLeaveComponent, pathMatch: 'full'},
   //  {path:'shared', 
   //   loadChildren: () => import('../Shared/SharedModule.module').then(m => m.Shared)
   // }
@@ -51,7 +51,7 @@ const routes: Routes = [
     DepartmentComponent,
     HolidayComponent,
     LeaveRequestComponent,
-    ApplyForLeaveComponent,
+    // ApplyForLeaveComponent,
     HeaderComponent,
     // EventComponent,
   //  SidebarComponent,
