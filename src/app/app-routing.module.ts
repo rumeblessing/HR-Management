@@ -30,7 +30,7 @@ const routes: Routes = [
     {path: 'referral', component: ReferralComponent, pathMatch: 'full'},
     {path: 'applicant', component: ApplicantComponent, pathMatch: 'full'},
     {path: 'ViewLeave', component: LeaveRequestComponent, pathMatch: 'full'},
-    {path: 'ApplyLeave', component: ApplyForLeaveComponent, pathMatch: 'full'},
+    // {path: 'ApplyLeave', component: ApplyForLeaveComponent, pathMatch: 'full'},
     {path: 'event', component: EventComponent, pathMatch: 'full'},
 
   ]

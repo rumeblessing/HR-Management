@@ -23,7 +23,7 @@ import { ReferralComponent } from './Referral/Referral.component';
 import { ApplicantComponent } from './Applicant/Applicant.component';
 import { EventComponent } from './Event/Event.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-import { ApplyForLeaveComponent } from './Apply-For-Leave/Apply-For-Leave.component';
+// import { ApplyForLeaveComponent } from './Apply-For-Leave/Apply-For-Leave.component';
 
 
 
@@ -38,7 +38,7 @@ import { ApplyForLeaveComponent } from './Apply-For-Leave/Apply-For-Leave.compon
       ReferralComponent,
       ApplicantComponent,
       EventComponent,
-      ApplyForLeaveComponent
+      // ApplyForLeaveComponent
    ],
   imports: [
     BrowserModule,

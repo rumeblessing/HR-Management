@@ -7,7 +7,7 @@
             <h4 class="card-title mb-0">Apply Leaves</h4>
           </div>
           <div class="card-body">
-            <form [formGroup]="applyLeaveForm" novalidate (ngSubmit)="applyForLeave()">
+            <!-- <form [formGroup]="applyLeaveForm" novalidate (ngSubmit)="applyForLeave()">
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
@@ -39,15 +39,11 @@
                   <div class="form-group">
                     <label>To</label>
                     <input type="date" formControlName="DateTo" class="form-control datetimepicker">
-                    <!-- <div *ngIf="applyLeaveForm.get('DateTo')?.invalid && (applyLeaveForm.get('DateTo')?.touched || applyLeaveForm.get('DateTo')?.dirty)">
-                      <small class="text-danger">To date is required.</small>
-                    </div> -->
+                  
                   </div>
                 </div>
               </div>
-              <!-- <div *ngIf="applyLeaveForm.errors?.['dateRangeInvalid']" class="text-danger text-center">
-                Application date cannot be less than resumption date.
-              </div> -->
+            
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
@@ -87,7 +83,7 @@
                 <button type="submit" class="btn btn-theme button-1 text-white ctm-border-radius mt-4 mr-2">Apply</button>
                 <a href="javascript:void(0);" class="btn btn-danger text-white ctm-border-radius mt-4">Cancel</a>
               </div>
-            </form>
+            </form> -->
           </div>
         </div>
       </div>
