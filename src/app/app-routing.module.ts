@@ -6,7 +6,7 @@ import { EmployeeDashboardComponent } from './EmployeeDashboard/EmployeeDashboar
 import { DepartmentComponent } from './Department/Department.component';
 import { HolidayComponent } from './Holiday/Holiday.component';
 import { LeaveRequestComponent } from './Leave-Request/Leave-Request.component';
-import { ApplyForLeaveComponent } from './Apply-For-Leave/Apply-For-Leave.component';
+// import { ApplyForLeaveComponent } from './Apply-For-Leave/Apply-For-Leave.component';
 import { SetupComponent } from './setup/setup.component';
 import { FormComponent } from './form/form.component';
 import { JobsComponent } from './Jobs/Jobs.component';
