@@ -4,7 +4,7 @@ import { SidebarSetupComponent } from './SidebarSetup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { ApplyForLeaveComponent } from '../Apply-For-Leave/Apply-For-Leave.component';
+// import { ApplyForLeaveComponent } from '../Apply-For-Leave/Apply-For-Leave.component';
 import { DepartmentComponent } from '../Department/Department.component';
 import { EmployeeDashboardComponent } from '../EmployeeDashboard/EmployeeDashboard.component';
 import { HolidayComponent } from '../Holiday/Holiday.component';
@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'department', component: DepartmentComponent, pathMatch: 'full'},
   {path: 'holiday', component: HolidayComponent, pathMatch: 'full'},
   {path: 'ViewLeave', component: LeaveRequestComponent, pathMatch: 'full'},
-  {path: 'ApplyLeave', component: ApplyForLeaveComponent, pathMatch: 'full'},
+  // {path: 'ApplyLeave', component: ApplyForLeaveComponent, pathMatch: 'full'},
   
 ];
 

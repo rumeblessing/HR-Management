@@ -2,12 +2,12 @@ import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ElementRef } fr
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiserviceService } from '../services/apiservice.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-EmployeeDashboard',
   templateUrl: './EmployeeDashboard.component.html',
   styleUrls: ['./EmployeeDashboard.component.css']
-  
 })
 export class EmployeeDashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   isCollapse: boolean = false;
@@ -21,6 +21,7 @@ export class EmployeeDashboardComponent implements OnInit, AfterViewInit, OnDest
   maleCount: number = 0;
   femaleCount: number = 0;
   filteredEmployees: any[] = [];
+  countries: any[] = [];
   
   @ViewChild('employeeTable') employeeTable: ElementRef | undefined;
 
@@ -112,18 +113,18 @@ export class EmployeeDashboardComponent implements OnInit, AfterViewInit, OnDest
     this.femaleCount = this.employee.filter((user: { gender: string }) => user.gender.toLowerCase() === 'female').length;
   }
 
-  AddEmployee(values: FormGroup) {
-    this.apiservices.AddDepartment(values.value).subscribe(
-      response => {
-        console.log('Response:', response);
-        alert("Created successfully");
-      },
-      error => {
-        console.error('Error:', error);
-        alert("Record created");
-      }
-    )
-  }
+  // AddEmployee(values: FormGroup) {
+  //   this.apiservices.AddDepartment(values.value).subscribe(
+  //     response => {
+  //       console.log('Response:', response);
+  //       alert("Created successfully");
+  //     },
+  //     error => {
+  //       console.error('Error:', error);
+  //       alert("Record created");
+  //     }
+  //   )
+  // }
 
   navigateToEmployeeform() {
     this.router.navigate(['setup/form']);
@@ -132,6 +133,7 @@ export class EmployeeDashboardComponent implements OnInit, AfterViewInit, OnDest
   ngOnInit() {
     this.getAllEmployee();
     this.users = this.apiservices.getUsers();
+    this.GetCountries();
   }
 
   getAllEmployee() {
@@ -143,22 +145,55 @@ export class EmployeeDashboardComponent implements OnInit, AfterViewInit, OnDest
     });
   }
 
+  GetCountries() {
+    this.apiservices.getCountries().subscribe(data => {
+      this.countries = data.sort((a: any, b: any) => 
+        a.name.common.localeCompare(b.name.common)
+      );
+    });
+  }
+
   RegisterEmployee() {
     this.Employeeform.value.joiningDate = new Date();
     this.apiservices.createUser(this.Employeeform.value).subscribe(
       response => {
         console.log('Response:', response);
-        alert(response);
         this.Employeeform.reset();
         this.toggleModal('CreateEmployeeModal', 'close');
+  
+        // Show success alert
+        Swal.fire({
+          title: 'Success!',
+          text: 'Employee registered successfully!',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          // Navigate to home screen after alert is closed
+          this.navigateToHome();
+        });
+  
         this.getAllEmployee();
       },
       error => {
         console.error('Error:', error);
+        this.toggleModal('CreateEmployeeModal', 'close');
+  
+        // Show error alert
+        Swal.fire({
+          title: 'Error!',
+          text: 'Failed to register employee.',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
       }
     );
   }
-  navigateToHome(){
+  
+  navigateToHome() {
     this.router.navigate(['setup/homescreen']);
+  }
+  
+  navigateToEmployeHome() {
+    this.router.navigate(['setup/employeescreen']);
   }
 }

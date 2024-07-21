@@ -36,8 +36,8 @@ this.ShowHeader = true
 
     }  }
   ngAfterViewInit(): void {
-    this.FirstName =  localStorage.getItem("FirstName")
-    console.log(this.FirstName, "firstName")
+    this.FirstName =  localStorage.getItem("FullName")
+    console.log(this.FirstName, "FullName")
 //  this.url = localStorage.getItem("HeaderName")!
   // localStorage.setItem("HeaderName", this.url)
   

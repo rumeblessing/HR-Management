@@ -171,12 +171,12 @@ if(this.form.value.FullName ==null){
         if (response.designation == "HR") {
          this.apiservices.setData(response)
         //  store in local storage
-         localStorage.setItem("FullName",response.fullName)
+         localStorage.setItem("FullName",response.firstName)
           this.router.navigate(['setup/homescreen']);
         } else {
           
-         localStorage.setItem("FullName",response.fullName)
-         console.log(response.fullName, "employeefullname")
+         localStorage.setItem("FullName",response.firstName)
+         console.log(response.firstName, "employeefullname")
           this.apiservices.setData(response)
           this.router.navigate(['setup/homescreen']);
         }

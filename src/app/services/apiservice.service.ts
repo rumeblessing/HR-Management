@@ -14,7 +14,7 @@ export class ApiserviceService {
  private TransaltionapiKey = 'AIzaSyC9FREfiz3n9WQQrVkUn25jIyXAiAPh07s';
   private url = `https://translation.googleapis.com/language/translate/v2?key=${this.apiKey}`;
 private translationUrl =  'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0';
-
+private CountryApiUrl = 'https://restcountries.com/v3.1/all';
  
 
   constructor(public http: HttpClient) {
@@ -85,5 +85,7 @@ private translationUrl =  'https://api.cognitive.microsofttranslator.com/transla
         
             return this.http.post(`${this.apiUrl}&to=${targetLanguage}`, body, { headers });
           }
-        
+          getCountries(): Observable<any> {
+            return this.http.get<any>(this.CountryApiUrl);
+          }
 }

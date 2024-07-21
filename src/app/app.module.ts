@@ -14,7 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { DepartmentComponent } from './Department/Department.component';
 import { HolidayComponent } from './Holiday/Holiday.component';
 import { LeaveRequestComponent } from './Leave-Request/Leave-Request.component';
-import { ApplyForLeaveComponent } from './Apply-For-Leave/Apply-For-Leave.component';
+// import { ApplyForLeaveComponent } from './Apply-For-Leave/Apply-For-Leave.component';
 import { SetupModule } from './setup/setup.module';
 import { SetupComponent } from './setup/setup.component';
 import { FormComponent } from './form/form.component';
@@ -22,6 +22,7 @@ import { JobsComponent } from './Jobs/Jobs.component';
 import { ReferralComponent } from './Referral/Referral.component';
 import { ApplicantComponent } from './Applicant/Applicant.component';
 import { EventComponent } from './Event/Event.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -45,7 +46,7 @@ import { EventComponent } from './Event/Event.component';
     HttpClientModule,
     BrowserModule,
     HttpClientModule,
-   
+    SweetAlert2Module.forRoot() 
     
   ],
   providers: [ApiserviceService],
